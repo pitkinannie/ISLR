@@ -17,7 +17,7 @@ output:
 
 ### 1. 
 
-The small p-value of 'TV' rejects the null hypothesis that money spent on TV advertising has no impact on 'sales'. Similarly, the small p-value of 'TV' rejects the null hypothesis that money spent on 'radio' has no impact on number of units sold.  The high p-value associated with 'newspaper"" advertising suggests the null hypothesis is true: money spent on 'newspaper' advertising is not statistically significant to number of units sold.
+The small p-value of TV rejects the null hypothesis that money spent on TV advertising has no impact on sales. Similarly, the small p-value of TV rejects the null hypothesis that money spent on radio has no impact on number of units sold.  The high p-value associated with newspaper advertising suggests the null hypothesis is true: money spent on newspaper advertising is not statistically significant to number of units sold.
 
 ***
 
