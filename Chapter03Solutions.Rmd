@@ -1,19 +1,21 @@
 ---
-title: "Chapter_03_Solutions"
+title: "Chapter 03 Solutions Linear Regression"
 author: "Annie Pitkin"
 date: "July 12, 2018"
-output: html_document
+output: 
+  html_document: 
+    keep_md: no
 ---
 
-
-#3.7 Exercises
+***
+# 3.7 Exercises
 ***
 ## Conceptual
 ***
 
 <a id="ex01"></a>
 
-###1. 
+### 1. 
 
 The small p-value of 'TV' rejects the null hypothesis that money spent on TV advertising has no impact on 'sales'. Similarly, the small p-value of 'TV' rejects the null hypothesis that money spent on 'radio' has no impact on number of units sold.  The high p-value associated with 'newspaper"" advertising suggests the null hypothesis is true: money spent on 'newspaper' advertising is not statistically significant to number of units sold.
 
@@ -21,7 +23,7 @@ The small p-value of 'TV' rejects the null hypothesis that money spent on TV adv
 
 <a id="ex02"></a>
 
-###2. 
+### 2. 
 
 The KNN Classifier classifies test observations based on the response probability of K nearest observations whereas KNN Regression estimates f(x) using the average of all the training respones.     
 
@@ -29,9 +31,9 @@ The KNN Classifier classifies test observations based on the response probabilit
 
 <a id="ex02"></a>
 
-###3.
+### 3.
 
-####(a) 
+#### (a) 
 
 Answer: (iii) Males earn more on average provided that the GPA is high enough.  The male and female salary predictions will be equal when the interaction term with GPA and gender equals the gender term, therefore 35=10*GPA or GPA = 3.5.  Male salary prediction is higher so long as the GPA is above 3.5.
 
@@ -39,13 +41,13 @@ $SalaryM = 50 + (20 * GPA) + (0.07 * IQ) + (.01 * GPA*IQ)$
 
 $SalaryF = 50 + (20 * GPA) + (35 * 1) + (0.07 * IQ) + (.01 * GPA*IQ) - (10 * GPA*1)$
 
-####(b) 
+#### (b) 
 
 $137,100.
 
 $SalaryF = 50 + (20 * 4.0) + (35 * 1) + (0.07 * 110) + (.01 * 4.0*110) - (10 * 4.0*1)$
 
-####(c)
+#### (c)
 
 False. The size of the coefficient term does not provide insight into the statistical significance of that term. In order to determine whether there is evidence of the interaction between GPA and IQ we would need to calculate the p-value of the coefficient.     
 
@@ -53,20 +55,20 @@ False. The size of the coefficient term does not provide insight into the statis
 
 <a id="ex02"></a>
 
-###4.
-####(a) 
+### 4.
+#### (a) 
 
 The training RSS of the cubic regression will be lower than the training RSS for the linear regression since it is more flexible and will overfit the training data, leading to a lower RSS.    
 
-####(b)
+#### (b)
 
 Opposite of (a).  Since the relationship is truly linear, the test data should have a lower linear regression test RSS vs. cubic regression test RSS.     
 
-####(c)
+#### (c)
 
 The cubic regression is more flexible and will therefore reduce training RSS more than linear regression, regardless of the true fit.     
 
-####(d)
+#### (d)
 
 There is not enough information to tell.  Although we might expect the cubic regression test RSS to be lower since the true relationship of X and Y is cubic, we do not know the extent of the true relationship's non-linearity.  A linear regression may oversimplify the fit and lead to a high bias.  Whereas a cubic regression fit may result in single points skewing the function and the test RSS.  Since it is unclear whether linear or cubic regression is the better choice due to flexibility: this problem needs more information to solve the bias-variance tradeoff.     
 
@@ -74,7 +76,7 @@ There is not enough information to tell.  Although we might expect the cubic reg
 
 <a id="ex02"></a>
 
-###5.
+### 5.
 
 $a_{i'} = \frac{ x_{i} x_{j} } { \sum_{k=1}^{n} x_{k}^{2} }$
 
@@ -82,7 +84,7 @@ $a_{i'} = \frac{ x_{i} x_{j} } { \sum_{k=1}^{n} x_{k}^{2} }$
 
 <a id="ex02"></a>
 
-###6.
+### 6.
 
 When $x_{i}=\bar{x}$, then $\hat{\beta_{1}}=0$ and $\hat{\beta_{0}}=\bar{y}$. Finally $\hat{y_{i}}=\hat{\beta_{0}} + \hat{\beta_{1}}x_{i}$ becomes $\hat{y_{i}} = \bar{y} + 0 *x_{i}$ which evaluates to equal $\bar{y}$. 
 
@@ -90,7 +92,7 @@ When $x_{i}=\bar{x}$, then $\hat{\beta_{1}}=0$ and $\hat{\beta_{0}}=\bar{y}$. Fi
 
 <a id="ex02"></a>
 
-###7.
+### 7.
 
 The correlation of a predictor and response is equal to the proportion of variability in Y that can be explained using X. We cannot correlate X anymore than X could drive variability in Y.  
 
@@ -121,25 +123,25 @@ $$ R^2 = \frac{\sum_{i=1}^{n} x_{i} y_{i}}{{\sum_{j=1}^{n}x_{j}^{2} \sum_{k=1}^{
 
 <a id="ex02"></a>
 
-###Applied    
+## Applied    
 
 ***
 
 <a id="ex02"></a>
 
-###8.
+### 8.
 
-####(a)    
+#### (a)    
 i. There is a relationship between mpg and horsepower because the p-value is small.     
 ii. The relationship is strong because F-stat value is high.     
 iii. Negative relationship because the horsepower coefficient is negative.
 iv. 24.4 mpg. 38% confidence interval.     
 
-####(b) 
+#### (b) 
 
 ![](H:/3.8b.png)     
 
-####(c)
+#### (c)
 
 The residuals plot has a funnel shape which suggests the true fit is non-linear. 
 
@@ -147,16 +149,16 @@ The residuals plot has a funnel shape which suggests the true fit is non-linear.
 
 <a id="ex02"></a>
 
-###9.
-####(a) 
+### 9.
+#### (a) 
 
     > pairs(Auto)
 
-####(b) 
+#### (b) 
 
     > cor(subset(Auto.select=-names))     
 
-####(c) 
+#### (c) 
 
     > lm.fit = lm(mpg~.-name,data=Auto)
 
@@ -164,15 +166,15 @@ i. Yes, there is a relationship between predictors and response.
 ii. Weight and year are statistically significant.     
 iii. The coefficient for year suggests that for every one unit increase in year (1 year) there is a .75 increase in mpg.       
 
-####(d) 
+#### (d) 
 
 The residuals plot suggests a slight non-linearity because it is funnel shaped. There are a 10 or so outliers seen in the studentized residuals with values greater than 3 -  plot(rstudent(lm.fit)). The leverage plot suggests at least one observation (14) which has very high leverage.
 
-####(e)
+#### (e)
 
 The interaction between horsepower and acceleration has a very small p-value and is therefore significant.
 
-####(f)
+#### (f)
 
 Both cylinders^2 and log(cylinders) have high p-values and are therefore not significant to mpg.         
 
@@ -180,39 +182,39 @@ Both cylinders^2 and log(cylinders) have high p-values and are therefore not sig
 
 <a id="ex02"></a>
 
-###10.
+### 10.
 
-####(a) 
+#### (a) 
 
     > lm.fit = lm(Sales~Price+Urban+US,data=Carseats)
 
-####(b) 
+#### (b) 
 
 Price has a negative coefficient, therefore sales decrease as price increases in the presence of Urban and US predictors.  If the store is in an Urban location sales decrease, since UrbanYes has a negative coefficient - however UrbanYes has a high p-value, not very significant.  If a store is in the US sales increase greatly, positive coefficient, low p-value therefore significant.    
 
-####(c)
+#### (c)
 
 UrbanYes is 1 if Carseat is sold in Urban store and 0 if sold in  rural store.  USYes equals 1 if store is in US and 0 if store not in US.  
 
 $Sales = 13.043 + (-.054) * Price + (-.022) * (UrbanYes) + (1.2) * (USYes)$
 
-####(d)
+#### (d)
 
 Reject null of everything except population, education, Urban and US (those four have high p-values).          
 
-####(e)
+#### (e)
 
     > lm.fit2 = lm(Sales~. - Population - Education - Urban - US,data=Carseats)        
 
-####(f) 
+#### (f) 
 
 The model from A fits the data well, the residuals are uniform, don't resemble a shape, the studentized residuals are below 3.  The model from E also fits the data well.         
 
-####(g)
+#### (g)
 
     > Confint(lm.fit2)        
 
-####(h)
+#### (h)
 
 There is one point with high leverage, 43,
 
@@ -223,21 +225,21 @@ There is one point with high leverage, 43,
 
 <a id="ex02"></a>
 
-###11.
+### 11.
 
-####(a)
+#### (a)
 
 Coefficient = 1.9939, SE .1065, t-stat 18.73, p-value 2e-16. the relationship is positive and significant.  The standard error is small.  t-stat is B/SE(B) tells us that the B coefficient is 18 standard deviations away from 0!
 
-####(b) 
+#### (b) 
 
 Coefficient = .3911, SE = .02089, t-stat = 18.73, p-value 2e-16.  relationship is positive, t-stat tells us the B coefficient is 18 sd's away from 0.  p-value is small therefore statistically significant coefficient. 
 
-####(c)
+#### (c)
 
 Results in a and b have the same t-stat and p-value.  
 
-####(d)
+#### (d)
 
 $$\hat{\beta} = \frac {\sum_{i=1}^{n} x_{i}y_{i} }{\sum_{j=1}^{n} x_{j}^{2}} $$
 
@@ -252,11 +254,11 @@ $$t-stat =\frac{\sqrt{(n-1)}\sum_{i=1}^{n} x_{i}y_{i}}{\sqrt{\sum_{j=1}^{j}x_{j}
 
 $$t-stat = \frac{\sqrt{(n-1)}\sum_{i=1}^{n} x_{i}y_{i}}{\sqrt{\sum_{j=1}^{j}x_{j}^{2}\sum_{j=1}^{n}y_{j}^{2} - x_{j}^{2}\frac {\sum_{i=1}^{n} x_{i}^{2}y_{i}^{2} }{\sum_{j=1}^{n} x_{j}^{2}}}} =  \frac{\sqrt{(n-1)}\sum_{i=1}^{n} x_{i}y_{i}}{\sqrt{\sum_{i=1}^{n}x_{i}^{2}\sum_{j=1}^{n}y_{j}^{2} - \sum_{j=1}^{n} x_{j}^{2}y_{j}^{2}}}$$
 
-####(e)
+#### (e)
 
 The regression lines for x onto y and y onto x without an intercept will be the same line, but with switched axis.  In this sense, it is understandable that the t-stat is the 18.73 for both of these regression lines. 
 
-####(f)
+#### (f)
 
 The t-stat for both regressions with intercepts is 18.56.
 
@@ -269,13 +271,13 @@ The t-stat for both regressions with intercepts is 18.56.
 
 <a id="ex02"></a>
 
-###12.
+### 12.
 
-####(a)
+#### (a)
 
 The coefficient estimate is the same when $\sum x_{i}^{2} = \sum y_{i}^{2}$. 
 
-####(b)
+#### (b)
 
     > set.seed(1)
     > x = rnorm(100)
@@ -286,7 +288,7 @@ The coefficient estimate is the same when $\sum x_{i}^{2} = \sum y_{i}^{2}$.
     > summary(lm.fitY)
 0.19162 != 4.9939
 
-####(c)
+#### (c)
 
     > set.seed(1)
     > x = rnorm(100)
@@ -302,41 +304,41 @@ Both regression coefficients are 81.055
 
 <a id="ex02"></a>
 
-###13.
+### 13.
 
-####(a)
+#### (a)
 
     > set.seed(1)
     > x = rnorm(100)
 
-####(b)
+#### (b)
 
     > eps = rnorm(100, mean = 0, sd = .5)
 
-####(c)
+#### (c)
     
     > y = -1 + (.5 * x) + eps
 'y' length is 100. $\beta_{0}$ is -1. $\beta_{1}$ is 0.5. 
 
-####(d)
+#### (d)
     
     >plot(x,y)
 I observe values of x between -2 and 2 and values of y between -2.5 and 0.5.  There is a general increasing shape. 
 
-####(e)
+#### (e)
 
     > lm.fit = lm(y~x)
     > summary(lm.fit)
 
 $\hat\beta_{0}$ is -0.98366 and $\hat\beta_{1}$ is 0.50839.  Both are very close in value to $\beta_{0}$ and $\beta_{1}$. 
 
-####(f)
+#### (f)
 
     > plot(x,y)
     > abline(lm.fit,col='Red')
     > legend("bottomright", legend=c("Least Squares Regression"), col="red", pch=c(14), bty = "n")
 
-####(g)
+#### (g)
 
     > lm.fitSq = lm(y~x + I(x^2))
     > summary(lm.fitSq)
@@ -344,7 +346,7 @@ $\hat\beta_{0}$ is -0.98366 and $\hat\beta_{1}$ is 0.50839.  Both are very close
 
 The quadratic term has a very high p-value in the presence of the other two terms and is not statistically significant.  The RSS of the quadratic fit in 0.01 smaller - this is not a significant decrease in RSS.  
 
-####(h)
+#### (h)
 
     > set.seed(1)
     > x = rnorm(100)
@@ -356,7 +358,7 @@ The quadratic term has a very high p-value in the presence of the other two term
     > summary(lm.fit)
 $\hat\beta_{0}$ is -0.9986 and $\hat\beta_{1}$ is 0.5011.  Both are closer in value to $\beta_{0}$ and $\beta_{1}$ due to less noise.  p-values have also decreased to <2e-16. Quadratic fit decreases the RSS by <0.0001. 
 
-####(i)
+#### (i)
 
     > set.seed(1)
     > x = rnorm(100)
@@ -368,7 +370,7 @@ $\hat\beta_{0}$ is -0.9986 and $\hat\beta_{1}$ is 0.5011.  Both are closer in va
     > summary(lm.fit)
 $\hat\beta_{0}$ is -1.0754 and $\hat\beta_{1}$ is 0.4979.  Both are further in value to $\beta_{0}$ and $\beta_{1}$ due to more noise.  p-values have also increased to 2.5e-07 and 0.0229. Quadratic fit decreases the RSS by 7. 
 
-####(j)
+#### (j)
 
 Confidence intervals widen with increase in variance (noise).  
 
@@ -395,15 +397,15 @@ Variance 2.0.
 
 <a id="ex02"></a>
 
-###14.
+### 14.
 
-####(a)
+#### (a)
 
 Linear form: $y = \beta_{0} + \beta_{1} x_1 + \beta_{2} x_2 + \varepsilon$
 
 $\beta_{0}=2$, $\beta_{1}=2$ and $\beta_{2}=0.3$. 
 
-####(b)
+#### (b)
     
     >cor(x1,x2)
 Correlation is strong, 0.835. 
@@ -411,7 +413,7 @@ Correlation is strong, 0.835.
     > plot(x1,x2)
 There is a positive linear relationship between x1 and x2.  
 
-####(c)
+#### (c)
 
     > lm.fit = lm(y~x1+x2)
     > summary(lm.fit)
@@ -420,25 +422,25 @@ $\hat\beta_{0} = 2.1305$ is close to true $\beta_{0} = 2.0$, $\hat\beta_{1} = 1.
 
 The p-value of $\hat\beta_{1}$ is low, null hypothesis can be rejected.  However, the p-value for $\hat\beta_{2}$ is high and cannot reject the null hypothesis.   
 
-####(d)
+#### (d)
 
     > lm.fitx1 = lm(y~x1)
     > summary(lm.fitx1)
     
 $\hat\beta_{1} = 1.9759$ is close to $\beta_{1} = 2$.  The p-value is very small and the null hypothesis can be rejected.  
 
-####(e)
+#### (e)
 
     > lm.fitx2 = lm(y~x2)
     > summary(lm.fitx2)
     
 The p-value is very close to 0 and the null hypothesis can be rejected. 
 
-####(f)
+#### (f)
 
 The results do not contradict each other. The least squares linear model including both x1 and x2 shows x2 is not statistically significant.  However, the regression on only x2 shows a linear relationship between the predictor and response.  This suggests collinearity between x1 and x2. 
 
-####(g)
+#### (g)
 
 In the model with both x1 and x2, this new data point decreases the p-value of $\hat\beta_{2}$ which allows us to reject the null hypothesis. Increase in $\hat\beta_{1}$ estimate - cannot reject null hypothesis. 
 
@@ -451,34 +453,34 @@ This new observation is a high leverage point in the first and third regression 
 
 <a id="ex02"></a>
 
-###15.
+### 15.
 
-####(a)
+#### (a)
 
 Each predictor is significant except chas - Charles River proximity. 
 
-####(b)
+#### (b)
 
 Multiple regression using all the predictors results in very high p-values for most predictors.  We can reject the null hypothesis for zn, dis, rad, black and medv.  
 
-####(c)
+#### (c)
 
 The coefficients from the univariate regression are all very close in value to the multiple regression coefficients except for nox: 31.24 univariate coefficient vs. -10.31 multiple regression coefficient. 
 
-####(d)
+#### (d)
 
-zn - 1, 2 (degree coefficients significant)
-indus - 1,2,3
-nox - 1,2,3
-rm - 1,2
-age - 1,2,3
-dis - 1,2,3
-rad - 1,2
-tax - 1,2
-ptratio - 1,2,3
-black - 1
-lstat - 1,2
-medv - 1,2,3
+zn - 1, 2 (degree coefficients significant)    
+indus - 1,2,3    
+nox - 1,2,3    
+rm - 1,2    
+age - 1,2,3    
+dis - 1,2,3    
+rad - 1,2    
+tax - 1,2    
+ptratio - 1,2,3    
+black - 1    
+lstat - 1,2    
+medv - 1,2,3    
 
 There is evidence of non-linear association between all of the predictors except chas and black.
 
